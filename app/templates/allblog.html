@@ -1,0 +1,143 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+{% import 'bootstrap/wtf.html' as wtf%}
+
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CSS Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .knockout {
+  background: url(http://apod.nasa.gov/apod/image/0603/coma_misti.jpg) -80px -80px;
+  color: red;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-weight: bold;
+  font-size: 50px;
+  font-family: arial, helvetica;
+  width: 400px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+body{
+  background: blueviolet;
+}
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Style the header 
+    .header {
+      width: 100%;
+      background-color: #666;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+      background-size: cover;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    /* Container for flexboxes */
+    section {
+      display: -webkit-flex;
+      display: flex;
+    }
+
+    /* Style the navigation menu */
+    nav {
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      background: #ccc;
+      padding: 20px;
+    }
+
+   
+
+    /* Style the content */
+    article {
+      -webkit-flex: 3;
+      -ms-flex: 3;
+      flex: 3;
+      background-color: #f1f1f1;
+      padding: 10px;
+    }
+
+    /* Style the footer */
+    footer {
+      background-color:whitesmoke;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+
+    /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+    @media (max-width: 200px) {
+      section {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="knockout">Blog It</div>
+  </header>
+
+  <section>
+    <nav>
+      <div class="card">
+        <div class="card-header">
+          Random Quote
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>{{random.quote}}</p>
+            <footer class="blockquote-footer">Robert Bob Marley <br><cite title="Source Title">(6 February 1945 - 11 May
+                1981)</cite></footer>
+          </blockquote>
+        </div>
+    </nav>
+
+    <article><div class="card">
+      <div class="card-header">
+        Blog
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">{{macro.displayPitches(pitches)}}</p>
+        <a href="/theblog" class="btn btn-primary">Add Blog</a>
+      </div>
+    </div>
+      
+      
+    </article>
+  </section>
+
+
+
+
+{% endblock%}
+
